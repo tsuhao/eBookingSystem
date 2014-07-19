@@ -3,8 +3,8 @@ currentUser = null;
       function login(){
           console.log("login");
           var data={};
-          data.username = encodeURI($("input[name='username']").val());
-          data.pwd = encodeURI($("input[name='userpw']").val());
+          data.username = encodeURI($("input[name='un']").val());
+          data.pwd = encodeURI($("input[name='pw']").val());
           $.ajax({
             type: "GET",
             url: "http://localhost:8888/login",
@@ -34,7 +34,7 @@ currentUser = null;
       function register(){
             console.log("register");
             var data={};
-            data.username = encodeURI($("input[name='username']").val());
+            data.username = encodeURI($("input[name='un']").val());
             data.pwd = encodeURI($("input[name='pw']").val());
             data.cpwd = encodeURI($("input[name='cpw']").val());
             data.email = encodeURI($("input[name='email']").val());
