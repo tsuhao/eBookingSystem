@@ -1,5 +1,4 @@
-var client = {
-      currentUser = null;
+currentUser = null;
       
       function login(){
           console.log("login");
@@ -81,4 +80,4 @@ var client = {
       function cancelApt(){
       
       }
-}
+
