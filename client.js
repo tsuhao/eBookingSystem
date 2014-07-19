@@ -1,7 +1,7 @@
 var client = {
-      currentUser: null,
+      currentUser = null;
       
-      login: function(){
+      function login(){
           console.log("login");
           var data={};
           data.username = encodeURI($("input[name='username']").val());
@@ -14,49 +14,71 @@ var client = {
             success: this.loginSuccess,
             error: this.loginFail,
           })
-      },
+      }
       
-      logout: function(){
+      function logout(){
       
-      },
+      }
       
-      loginSuccess: function(){
+      function loginSuccess(){
         $.mobile.changePage('#mainlogin');
-      },
+      }
       
-      loginFail: function(){
+      function loginFail(){
         alert("Wrong username or password");
-      },
+      }
       
-      logout: function(){
+      function logout(){
       
-      },
+      }
       
-      register: function(){
+      function register(){
+            console.log("register");
+            var data={};
+            data.username = encodeURI($("input[name='username']").val());
+            data.pwd = encodeURI($("input[name='pw']").val());
+            data.cpwd = encodeURI($("input[name='cpw']").val());
+            data.email = encodeURI($("input[name='email']").val());
+            $.ajax({
+                  type: "GET",
+                  url: "http://localhost:8888/register",
+                  data: $.param(data),
+                  contentType: "application/json",
+                  success: this.regSuccess,
+                  error: this.regFail,
+            })
+      }
       
-      },
+      function regSuccess(){
+        $.mobile.changePage('#mainlogin');
+      }
       
-      getApt: function(){
+      function regFail(){
+        alert("Username or email has been used already");
+      }
       
-      },
       
-      getAvailableTime: function(){
+      function getApt(){
       
-      },
+      }
       
-      getAvailableDoctor: function(){
+      function getAvailableTime(){
       
-      },
+      }
       
-      makeApt: function(){
+      function getAvailableDoctor(){
       
-      },
+      }
       
-      rearrangeApt: function(){
+      function makeApt(){
       
-      },
+      }
       
-      cancelApt: function(){
+      function rearrangeApt(){
+      
+      }
+      
+      function cancelApt(){
       
       }
 }
