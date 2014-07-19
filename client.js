@@ -39,7 +39,7 @@ currentUser = null;
             data.cpwd = encodeURI($("input[name='cpw']").val());
             data.email = encodeURI($("input[name='email']").val());
             $.ajax({
-                  type: "GET",
+                  type: "POST",
                   url: "http://localhost:8888/register",
                   data: $.param(data),
                   contentType: "application/json",
